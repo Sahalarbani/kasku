@@ -1,0 +1,41 @@
+# PROJECT REGISTRY
+
+- [x] src/App.tsx -> deps: auth.ts, WargaApp (Root Auth Gateway with role routing)
+- [x] src/portals/admin/AdminApp.tsx -> deps: shared/* (5-tab nav: Beranda, Bayar, Transaksi, Anggota, Akun)
+- [x] src/portals/admin/views/DashboardView.tsx -> deps: finance.ts
+- [x] src/portals/admin/views/PaymentsView.tsx -> deps: finance.ts
+- [x] src/portals/admin/views/TransactionsView.tsx -> deps: firebase.ts (Delete transaction added)
+- [x] src/portals/admin/views/MembersView.tsx -> deps: firebase.ts (Delete member added)
+- [x] src/portals/admin/views/UsersView.tsx -> deps: firebase.ts (User approval + role management)
+- [x] src/portals/warga/WargaApp.tsx -> deps: shared/* (3-tab warga portal)
+- [x] src/shared/services/firebase.ts -> deps: none (useUsersData, updateUserRole, delete ops)
+- [x] src/shared/services/auth.ts -> deps: firebase (Google + Email auth, auto pending)
+- [x] src/shared/types/index.ts -> deps: none (UserRole includes pending)
+- [x] src/shared/components/ui/ -> deps: useClickOutside
+- [x] src/shared/hooks/useClickOutside.ts -> deps: none
+- [x] api/notify.ts -> deps: firebase-admin (Serverless Vercel function to trigger Firebase Cloud Messaging pushes safely).
+- [x] src/shared/services/notifier.ts -> deps: api/notify (Internal util to hit Vercel API securely).
+- [x] apk-webview/ -> deps: Java, Firebase Messaging (Complete Android Studio project for WebView wrapper with background notification capabilities).
+- [x] src/portals/admin/views/AdminProfileView.tsx -> deps: UsersView.tsx (New profile page bridging theme, logout, and user management).
+- [x] src/portals/admin/AdminApp.tsx -> deps: AdminProfileView (Light theme default, robust member validation implemented).
+- [x] src/App.tsx -> deps: auth.ts (Added CompleteProfileView to intercept incomplete Google sign-ins and force real name/phone entry before pending state).
+- [x] src/shared/services/auth.ts -> deps: firebase (Added updateUserProfile to support profile completion).
+- [x] src/portals/warga/WargaApp.tsx -> deps: firebase (Multi-member link/unlink support per account).
+- [x] src/shared/services/firebase.ts -> deps: firestore (Added writeLog utility and attached to all mutations).
+- [x] src/portals/developer/DevApp.tsx -> deps: firebase (Rebuilt as Developer Console with realtime Audit Trail logs).
+- [x] src/App.tsx -> deps: DevApp (Added floating Exit Bypass button for seamless testing navigation).
+- [x] src/portals/developer/DevApp.tsx -> deps: firebase (Added user deletion capability and detailed user info to Accounts tab).
+- [x] src/shared/services/firebase.ts -> deps: firestore (Added deleteUserDoc with writeLog tracking).
+- [x] src/shared/services/firebase.ts -> deps: updateDoc (Automated 'member' creation & linking upon setting role to 'warga').
+- [x] src/portals/warga/WargaApp.tsx -> deps: firebase (Fixed JSX syntax error and implemented robust self-healing UI linking).
+- [x] src/portals/admin/AdminApp.tsx -> deps: none (Added expense balance validation logic to avoid negative cash).
+- [x] src/portals/warga/WargaApp.tsx -> deps: notifier.ts (Added native push notification trigger when submitting QRIS/Cash payment).
+- [x] src/portals/admin/views/AdminProfileView.tsx -> deps: localStorage (Added dynamic default due configuration).
+- [x] src/portals/admin/views/RequestsView.tsx -> deps: firebase (Realtime queue for resident payment requests).
+- [x] src/portals/warga/WargaApp.tsx -> deps: firebase (Re-linked payment notification buttons to write to PaymentRequests collection).
+- [x] src/index.css -> deps: none (Refactored global styles to Premium WebView Armor, restricted gradients & safe areas).
+- [x] src/portals/admin/AdminApp.tsx -> deps: PremiumDropdown (Refactored form sheets, erased all native select tags).
+- [x] src/portals/warga/WargaApp.tsx -> deps: PremiumDropdown (Refactored payment sheet, enforced premium token palette).
+- [x] src/portals/developer/DevApp.tsx -> deps: SegmentedTabs (Upgraded UI shell to strict native dark tokens).
+- [x] src/App.tsx -> deps: none (Polished component layout and input padding constraints).
+- [x] root -> deps: none (Cleared merge conflict artifacts and update patches).

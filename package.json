@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "firebase": "^12.15.0",
+    "firebase-admin": "^14.0.0",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "^7.18.0",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@rollup/rollup-android-arm64": "^4.62.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vercel/node": "^5.8.17",
+    "@vitejs/plugin-react": "^4.3.4",
+    "rollup": "^3.30.0",
+    "vite": "^4.5.14"
+  }
+}
